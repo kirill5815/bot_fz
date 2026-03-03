@@ -12,38 +12,40 @@
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, 'Helvetica Neue', sans-serif;
             background: var(--bg-body);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             padding: 12px 0 20px 0;
             margin: 0;
-            line-height: 1.5;
+            line-height: 1.6;
             color: var(--text-primary);
             transition: background-color 0.2s, color 0.2s;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Светлая тема (по умолчанию) */
+        /* Светлая тема */
         :root {
-            --bg-body: #f0f2f5;
+            --bg-body: #f5f7fa;
             --bg-card: #ffffff;
-            --text-primary: #1e293b;
-            --text-secondary: #3a5670;
-            --border-light: rgba(0, 50, 90, 0.06);
-            --chip-bg: #edf2f8;
+            --text-primary: #1a2b3e;
+            --text-secondary: #2c405c;
+            --text-soft: #4a5e7a;
+            --border-light: rgba(20, 50, 80, 0.08);
+            --chip-bg: #eef2f8;
             --chip-color: #1e3a5f;
             --chip-active-bg: #1e3a5f;
             --chip-active-color: white;
-            --law-bg: #f8fcff;
-            --law-border: #d3e2f2;
+            --law-bg: #fafcff;
+            --law-border: #d9e6f5;
             --nav-arrow-bg: #f0f6fe;
-            --nav-arrow-border: #dae3ed;
+            --nav-arrow-border: #d0dfef;
             --feedback-bg: #f0f7ff;
             --feedback-border: #1e3a5f;
             --progress-bg: #e3eaf2;
             --progress-fill: #1e3a5f;
-            --header-gradient: linear-gradient(145deg, #0a2e4f, #001f3a);
+            --header-gradient: linear-gradient(145deg, #0a2e4f, #00203a);
             --header-text: white;
             --tab-bar-bg: white;
             --tab-bar-border: #e0eaf2;
@@ -56,55 +58,70 @@
             --study-note-border: #c1d9f0;
             --footer-color: #6f7e93;
             --icon-mvd-fill: #ffffff;
+            --paragraph-highlight: #e3efff;
+            --law-text-color: #1e2e42;
+            --law-heading-color: #0a2e4f;
+            --article-num-bg: #1e3a5f;
+            --article-num-color: white;
+            --part-bg: #f3f9ff;
+            --part-border: #b9d2ee;
         }
 
         /* Тёмная тема */
         body.dark-theme {
-            --bg-body: #121826;
-            --bg-card: #1e2638;
-            --text-primary: #eef2f8;
-            --text-secondary: #b0c2da;
-            --border-light: #2f3b54;
-            --chip-bg: #2c364d;
-            --chip-color: #d2e0ff;
-            --chip-active-bg: #3f5e8f;
+            --bg-body: #0f1420;
+            --bg-card: #1a2232;
+            --text-primary: #eef3fc;
+            --text-secondary: #cbd8f0;
+            --text-soft: #a5b9d9;
+            --border-light: #2e3b54;
+            --chip-bg: #283249;
+            --chip-color: #d6e4ff;
+            --chip-active-bg: #2f4b78;
             --chip-active-color: white;
-            --law-bg: #1d2539;
-            --law-border: #3f506e;
-            --nav-arrow-bg: #2c364f;
-            --nav-arrow-border: #4f6183;
-            --feedback-bg: #1f2b40;
+            --law-bg: #1a2338;
+            --law-border: #344662;
+            --nav-arrow-bg: #283249;
+            --nav-arrow-border: #41587a;
+            --feedback-bg: #1f2b44;
             --feedback-border: #5a7bb3;
-            --progress-bg: #2d384e;
-            --progress-fill: #5a7bb3;
-            --header-gradient: linear-gradient(145deg, #071d30, #010b16);
-            --header-text: #e6f0ff;
-            --tab-bar-bg: #1e2638;
-            --tab-bar-border: #3e4b66;
-            --tab-inactive: #a5bbdd;
-            --option-bg: #232c41;
-            --option-border: #415170;
-            --option-selected-bg: #2c3f60;
-            --result-banner-bg: #1d2a3f;
-            --study-note-bg: #1d263d;
-            --study-note-border: #3f5680;
-            --footer-color: #9aafce;
-            --icon-mvd-fill: #ffd966;
+            --progress-bg: #2b344b;
+            --progress-fill: #5f82b0;
+            --header-gradient: linear-gradient(145deg, #051a2c, #010d1a);
+            --header-text: #e0edff;
+            --tab-bar-bg: #1a2232;
+            --tab-bar-border: #37445e;
+            --tab-inactive: #aec2e6;
+            --option-bg: #20283e;
+            --option-border: #3b4868;
+            --option-selected-bg: #283959;
+            --result-banner-bg: #1e2841;
+            --study-note-bg: #1e2740;
+            --study-note-border: #3a4f78;
+            --footer-color: #9bafd1;
+            --icon-mvd-fill: #ffde9e;
+            --paragraph-highlight: #25324f;
+            --law-text-color: #e0eafc;
+            --law-heading-color: #b5d0ff;
+            --article-num-bg: #2f4b78;
+            --article-num-color: white;
+            --part-bg: #202d4a;
+            --part-border: #425c88;
         }
 
         .mobile-wrap {
             width: 100%;
-            max-width: 420px;
+            max-width: 440px;
             margin: 0 auto;
-            padding: 0 16px;
+            padding: 0 14px;
         }
 
         /* карточки */
         .card {
             background: var(--bg-card);
-            border-radius: 28px;
-            padding: 20px 18px;
-            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+            border-radius: 32px;
+            padding: 22px 20px;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
             margin-bottom: 18px;
             border: 1px solid var(--border-light);
             transition: background-color 0.2s, border 0.2s;
@@ -114,20 +131,19 @@
             background: var(--header-gradient);
             color: var(--header-text);
             border: none;
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 12px 28px rgba(0, 15, 40, 0.3);
         }
 
-        /* шапка с иконкой и переключателем темы */
         .header-row {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
         }
         .mvd-icon {
-            width: 52px;
-            height: 52px;
+            width: 56px;
+            height: 56px;
             background: rgba(255,255,255,0.1);
-            border-radius: 26px;
+            border-radius: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -135,8 +151,8 @@
             border: 1px solid rgba(255,255,255,0.2);
         }
         .mvd-icon svg {
-            width: 40px;
-            height: 40px;
+            width: 42px;
+            height: 42px;
             fill: var(--icon-mvd-fill);
             transition: fill 0.2s;
         }
@@ -144,7 +160,7 @@
             flex: 1;
         }
         .theme-toggle {
-            background: rgba(0,0,0,0.2);
+            background: rgba(0,0,0,0.25);
             border: 1px solid rgba(255,255,255,0.2);
             color: white;
             border-radius: 40px;
@@ -157,9 +173,10 @@
             gap: 6px;
             backdrop-filter: blur(4px);
             -webkit-tap-highlight-color: transparent;
+            white-space: nowrap;
         }
         h1 {
-            font-size: 1.7rem;
+            font-size: 1.75rem;
             font-weight: 650;
             letter-spacing: -0.02em;
             line-height: 1.2;
@@ -188,7 +205,7 @@
             border-radius: 60px;
             padding: 6px;
             margin-bottom: 20px;
-            box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.07);
             border: 1px solid var(--tab-bar-border);
         }
         .tab {
@@ -206,7 +223,7 @@
         .tab.active {
             background: var(--chip-active-bg);
             color: white;
-            box-shadow: 0 4px 10px rgba(0,60,130,0.25);
+            box-shadow: 0 4px 12px rgba(0,50,110,0.3);
         }
 
         h2 {
@@ -227,7 +244,7 @@
         }
         .chip {
             background: var(--chip-bg);
-            padding: 9px 18px;
+            padding: 10px 20px;
             border-radius: 40px;
             font-size: 0.95rem;
             font-weight: 550;
@@ -236,27 +253,27 @@
             border: 1px solid transparent;
             cursor: pointer;
             -webkit-tap-highlight-color: transparent;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
         }
         .chip.active {
             background: var(--chip-active-bg);
             color: var(--chip-active-color);
-            box-shadow: 0 6px 12px rgba(0,55,110,0.3);
+            box-shadow: 0 8px 16px rgba(0,40,80,0.2);
         }
 
         .panel { display: none; }
         .panel.active-panel { display: block; }
 
-        /* изучение */
+        /* ========== УЛУЧШЕННОЕ ЧТЕНИЕ СТАТЕЙ ========== */
         .study-progress-bar {
-            height: 8px;
+            height: 6px;
             background: var(--progress-bg);
             border-radius: 20px;
-            margin: 18px 0 12px 0;
+            margin: 18px 0 16px 0;
             overflow: hidden;
         }
         .study-progress-fill {
-            height: 8px;
+            height: 6px;
             background: var(--progress-fill);
             width: 33%;
             border-radius: 20px;
@@ -267,80 +284,132 @@
             align-items: center;
             justify-content: space-between;
             gap: 12px;
-            margin-top: 10px;
+            margin: 16px 0 8px;
         }
         .nav-arrow {
             background: var(--nav-arrow-bg);
-            width: 48px;
-            height: 48px;
+            width: 52px;
+            height: 52px;
             border-radius: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
+            font-size: 2rem;
             cursor: pointer;
             -webkit-tap-highlight-color: transparent;
             color: var(--text-primary);
             border: 1px solid var(--nav-arrow-border);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: 0.1s;
         }
         .nav-arrow:active { transform: scale(0.94); background: var(--chip-active-bg); color: white; }
         .article-indicator {
             background: var(--chip-bg);
-            padding: 8px 20px;
+            padding: 8px 22px;
             border-radius: 50px;
             font-size: 1rem;
             font-weight: 600;
             color: var(--text-primary);
+            white-space: nowrap;
         }
-        .law-text-block-enhanced {
+
+        /* ОСНОВНОЙ БЛОК ДЛЯ ЧТЕНИЯ — МАКСИМАЛЬНО УДОБНО */
+        .law-text-enhanced {
             background: var(--law-bg);
-            border-radius: 26px;
-            padding: 24px 22px;
-            margin: 20px 0 10px;
-            font-size: 1.05rem;
-            line-height: 1.6;
-            box-shadow: inset 0 2px 10px rgba(0,0,0,0.02);
+            border-radius: 28px;
+            padding: 28px 24px;
+            margin: 20px 0 16px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            box-shadow: inset 0 2px 12px rgba(0,0,0,0.02), 0 8px 22px rgba(0, 0, 0, 0.05);
             border: 1px solid var(--law-border);
-            max-height: 450px;
+            max-height: 480px;
             overflow-y: auto;
-            color: var(--text-primary);
+            color: var(--law-text-color);
+            scroll-behavior: smooth;
         }
-        .article-big-title {
-            font-size: 1.6rem;
+
+        /* Стили для текста статей внутри блока */
+        .law-text-enhanced .article-big-title {
+            font-size: 1.8rem;
             font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 18px;
+            color: var(--law-heading-color);
+            margin-bottom: 24px;
             border-bottom: 3px solid var(--progress-fill);
-            padding-bottom: 12px;
+            padding-bottom: 16px;
+            letter-spacing: -0.3px;
         }
-        .article-paragraph {
+
+        .law-text-enhanced .article-paragraph {
             background: var(--bg-card);
-            border-radius: 20px;
-            padding: 18px 20px;
-            margin-bottom: 16px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.05);
-            border-left: 6px solid var(--progress-fill);
+            border-radius: 24px;
+            padding: 22px 24px;
+            margin-bottom: 22px;
+            box-shadow: 0 5px 16px rgba(0,0,0,0.03);
+            border-left: 8px solid var(--progress-fill);
+            transition: background 0.2s;
+            font-size: 1.05rem;
         }
-        .paragraph-num {
+
+        .law-text-enhanced .article-paragraph[data-highlight="true"] {
+            background: var(--paragraph-highlight);
+            border-left-width: 10px;
+        }
+
+        .law-text-enhanced .paragraph-num {
             display: inline-block;
-            background: var(--chip-active-bg);
-            color: white;
-            border-radius: 30px;
-            padding: 4px 14px;
-            font-size: 0.85rem;
-            margin-right: 14px;
+            background: var(--article-num-bg);
+            color: var(--article-num-color);
+            border-radius: 40px;
+            padding: 6px 20px;
+            font-size: 0.9rem;
             font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: 0.3px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-        .study-quick-note {
-            background: var(--study-note-bg);
-            border-radius: 22px;
-            padding: 16px 20px;
-            color: var(--text-primary);
-            border: 1px solid var(--study-note-border);
-            margin-top: 12px;
+
+        .law-text-enhanced .paragraph-text {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--law-text-color);
         }
-        /* тесты */
+
+        /* Нумерованные пункты внутри статей */
+        .law-text-enhanced .paragraph-text .part-num {
+            font-weight: 650;
+            color: var(--chip-active-bg);
+            background: var(--part-bg);
+            padding: 2px 10px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-right: 8px;
+            border: 1px solid var(--part-border);
+        }
+
+        .law-text-enhanced .paragraph-text p {
+            margin-bottom: 14px;
+        }
+
+        .law-text-enhanced .paragraph-text ul, 
+        .law-text-enhanced .paragraph-text ol {
+            padding-left: 28px;
+            margin: 14px 0;
+        }
+
+        .law-text-enhanced .paragraph-text li {
+            margin-bottom: 10px;
+        }
+
+        /* Для удобства чтения длинных чисел */
+        .law-text-enhanced .paragraph-text .law-num {
+            font-weight: 600;
+            color: var(--chip-active-bg);
+            background: transparent;
+        }
+
+        /* тесты (стили сохранены) */
         .question-text { font-size: 1.2rem; font-weight: 550; margin-bottom: 24px; }
         .options-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
         .option-item { background: var(--option-bg); border: 1.5px solid var(--option-border); border-radius: 20px; padding: 14px 18px; cursor: pointer; color: var(--text-primary); }
@@ -357,12 +426,11 @@
 </head>
 <body>
 <div class="mobile-wrap">
-    <!-- ШАПКА С ИКОНКОЙ МВД И ПЕРЕКЛЮЧАТЕЛЕМ ТЕМЫ -->
+    <!-- ШАПКА -->
     <div class="card header-card">
         <div class="header-row">
             <div class="mvd-icon">
-                <!-- Иконка МВД (стилизованный герб) -->
-                <svg viewBox="0 0 100 100" fill="currentColor">
+                <svg viewBox="0 0 100 100">
                     <path d="M50 10L15 28v22c0 18 35 30 35 30s35-12 35-30V28L50 10z"/>
                     <circle cx="50" cy="45" r="12" fill="none" stroke="currentColor" stroke-width="3"/>
                     <path d="M50 33v24M38 45h24" stroke="currentColor" stroke-width="3"/>
@@ -379,7 +447,7 @@
         </div>
     </div>
 
-    <!-- МЕНЮ: изучение / тесты -->
+    <!-- МЕНЮ -->
     <div class="tab-bar" id="tabBar">
         <div class="tab active" data-tab="study">📖 Изучение</div>
         <div class="tab" data-tab="test">📝 Тесты</div>
@@ -387,7 +455,7 @@
 
     <!-- ========== ПАНЕЛЬ ИЗУЧЕНИЯ ========== -->
     <div id="studyPanel" class="panel active-panel">
-        <div class="card study-header-card">
+        <div class="card">
             <h2>📘 Выберите раздел</h2>
             <div class="chip-container" id="studyTopicChips">
                 <div class="chip active" data-study-topic="0">Общие положения (ст. 1-7)</div>
@@ -399,20 +467,23 @@
 
         <div class="card">
             <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-weight: 700; font-size: 1.2rem;" id="currentStudyArticleLabel">Общие положения</span>
+                <span style="font-weight: 700; font-size: 1.3rem;" id="currentStudyArticleLabel">Общие положения</span>
                 <span class="article-indicator" id="articleRangeLabel">ст. 1-7</span>
             </div>
             <div class="study-progress-bar">
                 <div class="study-progress-fill" id="studyProgressFill" style="width: 14%;"></div>
             </div>
-            <div class="law-text-block-enhanced" id="lawTextEnhanced"></div>
+            
+            <!-- БЛОК С ТЕКСТОМ СТАТЕЙ (УЛУЧШЕННЫЙ ДЛЯ ЧТЕНИЯ) -->
+            <div class="law-text-enhanced" id="lawTextEnhanced"></div>
+            
             <div class="article-navigation">
                 <div class="nav-arrow" id="prevArticleBtn">←</div>
-                <span style="font-weight: 500; background: var(--chip-bg); padding: 6px 16px; border-radius: 40px;" id="articleCounter">1 / 7</span>
+                <span style="font-weight: 500; background: var(--chip-bg); padding: 6px 20px; border-radius: 40px;" id="articleCounter">1 / 7</span>
                 <div class="nav-arrow" id="nextArticleBtn">→</div>
             </div>
-            <div class="study-quick-note">
-                💡 <strong>Полные тексты статей</strong> — актуальная редакция ФЗ №3.
+            <div class="study-quick-note" style="margin-top: 16px; border-radius: 20px; padding: 16px;">
+                💡 <strong>Для удобства чтения</strong> — используйте стрелки для навигации по частям статей. Текст отформатирован с учётом структуры закона.
             </div>
         </div>
     </div>
@@ -458,7 +529,7 @@
 
 <script>
     (function() {
-        // ПОЛНЫЕ ТЕКСТЫ СТАТЕЙ (как в предыдущей версии, сохранены)
+        // ПОЛНЫЕ ТЕКСТЫ СТАТЕЙ (сохранены, но для читаемости добавим форматирование)
         const fullLawArticles = [
             { title: 'Общие положения', range: 'ст. 1-7', paragraphs: [
                 { num: 'Статья 1. Назначение полиции', text: '1. Полиция предназначена для защиты жизни, здоровья, прав и свобод граждан Российской Федерации, иностранных граждан, лиц без гражданства, для противодействия преступности, охраны общественного порядка, собственности и для обеспечения общественной безопасности. 2. Полиция незамедлительно приходит на помощь каждому, кто нуждается в ее защите от преступных и иных противоправных посягательств. 3. Полиция в пределах своих полномочий оказывает содействие федеральным органам государственной власти, органам государственной власти субъектов РФ, иным государственным органам, органам местного самоуправления, общественным объединениям, а также организациям независимо от форм собственности, должностным лицам этих органов и организаций в защите их прав.' },
@@ -470,7 +541,7 @@
                 { num: 'Статья 7. Беспристрастность', text: '1. Полиция защищает права и свободы человека независимо от пола, расы, национальности, языка, происхождения, имущественного и должностного положения, места жительства, отношения к религии, убеждений, принадлежности к общественным объединениям. 2. Сотруднику полиции запрещается состоять в политических партиях. 3. Сотрудник полиции должен проявлять уважение к национальным обычаям и традициям, способствовать межнациональному и межконфессиональному согласию.' }
             ]},
             { title: 'Обязанности полиции', range: 'ст. 12', paragraphs: [
-                { num: 'Статья 12. Обязанности полиции (часть 1)', text: '1) принимать и регистрировать (в том числе в электронной форме) заявления и сообщения о преступлениях, об административных правонарушениях, о происшествиях; выдавать уведомления о приеме заявлений; осуществлять проверку; информировать заявителей о ходе рассмотрения; передавать сообщения по подведомственности;' },
+                { num: 'Статья 12. Обязанности полиции (часть 1)', text: '1) принимать и регистрировать (в том числе в электронной форме) заявления и сообщения о преступлениях, об административных правонарушениях, о происшествиях; выдавать уведомления о приеме заявлений; осуществлять проверку; информировать заявителей о ходе рассмотрения (не реже одного раза в месяц); передавать сообщения по подведомственности;' },
                 { num: 'Статья 12. Обязанности (часть 2)', text: '2) прибывать незамедлительно на место совершения преступления, административного правонарушения, место происшествия, пресекать противоправные деяния, устранять угрозы безопасности граждан, документировать обстоятельства, обеспечивать сохранность следов;' },
                 { num: 'Статья 12. Обязанности (часть 3)', text: '3) оказывать первую помощь лицам, пострадавшим от преступлений, административных правонарушений и несчастных случаев, а также лицам, находящимся в беспомощном состоянии либо в состоянии, опасном для жизни, если специализированная помощь не может быть получена своевременно; сообщать близким в срок не позднее 24 часов;' },
                 { num: 'Статья 12. Обязанности (часть 4)', text: '4) выявлять причины преступлений и административных правонарушений, принимать меры по их устранению; проводить индивидуальную профилактику; участвовать в профилактике безнадзорности несовершеннолетних; пропагандировать правовые знания;' },
@@ -497,7 +568,8 @@
             ]}
         ];
 
-        const questionsBank = [ /* те же вопросы, сокращено для читаемости */ 
+        // те же вопросы для тестов
+        const questionsBank = [
             [ { question:"Какое назначение полиции согласно ст. 1?", options:["Защита жизни, здоровья, прав и свобод","Контроль оружия","Охрана предприятий","Следствие"], correct:0, explanation:"Ст.1: защита жизни, прав, свобод" }, { question:"Принцип деятельности полиции (ст.5)?", options:["Платность","Соблюдение прав","Внезапность","Приоритет корпораций"], correct:1, explanation:"Ст.5: соблюдение прав и свобод" }, { question:"Правовая основа полиции (ст.3)?", options:["Указания министра","Конституция, ФЗ, договоры","Локальные акты","Региональные законы"], correct:1, explanation:"Ст.3: Конституция, ФЗ, международные договоры" }, { question:"Запрет на политические партии?", options:["Да (ст.7)","Нет","Во внеслужебное время","С разрешения"], correct:0, explanation:"Ст.7: запрещено состоять в партиях" }, { question:"Сотрудник обязан назвать фамилию?", options:["Да (ст.5)","Нет","Только если требует","В суде"], correct:0, explanation:"Ст.5 ч.4: обязан назвать" } ],
             [ { question:"Обязанность по приему заявлений? (ст.12)", options:["Проверка паспортов","Принимать и регистрировать","Взимать штрафы","Обыски"], correct:1, explanation:"Ст.12 ч.1: принимать заявления" }, { question:"Срок уведомления родственников о помощи?", options:["3ч","12ч","24ч","Немедленно"], correct:2, explanation:"Ст.12 ч.3: не позднее 24ч" }, { question:"Информирование заявителей?", options:["Да, не реже раза в месяц","Нет","Только по запросу","Раз в квартал"], correct:0, explanation:"Ст.12 ч.1: не реже 1 раза в месяц" }, { question:"Розыск похищенного имущества?", options:["Да","Нет","Только по суду","Крупные суммы"], correct:0, explanation:"Ст.12 ч.12: розыск" }, { question:"Первая помощь в опасном состоянии?", options:["Да, если нет специалистов","Нет","Только пострадавшим","Только детям"], correct:0, explanation:"Ст.12 ч.3: если специалисты не могут" } ],
             [ { question:"Проверка документов возможна при...", options:["Подозрении","Всегда","Ночью","На блокпостах"], correct:0, explanation:"Ст.13 ч.2: подозрение" }, { question:"Использовать транспорт граждан?", options:["Да, кроме диппредставительств","Нет","Только организации","Велосипеды"], correct:0, explanation:"Ст.13 ч.22" }, { question:"Оцепление территории при...", options:["Массовых беспорядках","ДТП","Учениях","Сборе подписей"], correct:0, explanation:"Ст.13 ч.19" }, { question:"Требовать покинуть место?", options:["Да","Нет","По суду","Понятым"], correct:0, explanation:"Ст.13 ч.7" }, { question:"Сведения по счетам граждан?", options:["При налоговых преступлениях","Всегда","С санкции прокурора","Нельзя"], correct:0, explanation:"Ст.13 ч.4" } ],
@@ -533,25 +605,47 @@
             const data = fullLawArticles[currentStudyTopic];
             currentStudyArticleLabel.innerText = data.title;
             articleRangeLabel.innerText = data.range;
+            
             let html = `<div class="article-big-title">📄 ${data.title}</div>`;
             data.paragraphs.forEach((p, idx) => {
-                html += `<div class="article-paragraph" data-para-idx="${idx}"><span class="paragraph-num">${p.num}</span> <span class="paragraph-text">${p.text}</span></div>`;
+                // Добавляем форматирование для текста (можно улучшить, но для читаемости оставим)
+                let formattedText = p.text.replace(/(\d+)\)/g, '<span class="part-num">$1)</span>');
+                formattedText = formattedText.replace(/([0-9]+\.)/g, '<span class="law-num">$1</span>');
+                
+                html += `<div class="article-paragraph" data-para-idx="${idx}">
+                    <span class="paragraph-num">${p.num}</span>
+                    <div class="paragraph-text">${formattedText}</div>
+                </div>`;
             });
             lawTextEnhanced.innerHTML = html;
+            
             currentParaIndex = 0;
             highlightParagraph(0);
         }
+
         function highlightParagraph(index) {
             const paras = document.querySelectorAll('.article-paragraph');
             if (!paras.length) return;
-            paras.forEach((p, i) => { p.style.background = i === index ? 'var(--chip-bg)' : ''; });
-            paras[index]?.scrollIntoView({ behavior:'smooth', block:'center' });
+            paras.forEach((p, i) => {
+                if (i === index) {
+                    p.setAttribute('data-highlight', 'true');
+                    p.style.background = 'var(--paragraph-highlight)';
+                    p.style.borderLeftWidth = '10px';
+                } else {
+                    p.setAttribute('data-highlight', 'false');
+                    p.style.background = '';
+                    p.style.borderLeftWidth = '8px';
+                }
+            });
+            paras[index]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
             const total = paras.length;
             articleCounter.innerText = `${index+1} / ${total}`;
             studyProgressFill.style.width = ((index+1)/total*100)+'%';
         }
-        prevArticleBtn.addEventListener('click', ()=>{ if(currentParaIndex>0){ currentParaIndex--; highlightParagraph(currentParaIndex); } });
+
+        prevArticleBtn.addEventListener('click', ()=>{ if(currentParaIndex > 0){ currentParaIndex--; highlightParagraph(currentParaIndex); } });
         nextArticleBtn.addEventListener('click', ()=>{ const total = fullLawArticles[currentStudyTopic].paragraphs.length; if(currentParaIndex < total-1){ currentParaIndex++; highlightParagraph(currentParaIndex); } });
+
         studyTopicChips.forEach(chip => {
             chip.addEventListener('click', ()=>{
                 const newTopic = parseInt(chip.dataset.studyTopic, 10);
@@ -564,14 +658,16 @@
             });
         });
 
-        // ---------- ТЕСТЫ (сокращённо, но полноценно) ----------
+        // ---------- ТЕСТЫ ----------
         let currentTopic = 0, topicQuestions = questionsBank[currentTopic], currentQuestionIndex = 0, userAnswers = new Array(topicQuestions.length).fill(null), score = 0, answeredFlag = false;
         const topicChips = document.querySelectorAll('.chip[data-topic]'), topicDescEl = document.getElementById('topicDescription'), topicNameBadge = document.getElementById('topicNameBadge'), questionDisplay = document.getElementById('questionDisplay'), optionsContainer = document.getElementById('optionsContainer'), feedbackText = document.getElementById('feedbackText'), submitBtn = document.getElementById('submitBtn'), nextBtn = document.getElementById('nextBtn'), resetTestBtn = document.getElementById('resetTestBtn'), questionCounter = document.getElementById('questionCounter'), scoreDisplay = document.getElementById('scoreDisplay'), remindArticle = document.getElementById('remindArticle'), completionBanner = document.getElementById('completionBanner');
+        
         function refreshTopicDisplay() { const m=topicMeta[currentTopic]; topicDescEl.innerHTML=`<span>${m.desc}</span>`; topicNameBadge.innerText=m.name; remindArticle.innerText=m.articles; topicChips.forEach(c=>{ c.classList.toggle('active', parseInt(c.dataset.topic,10)===currentTopic); }); }
         function loadTopicQuestions() { topicQuestions=questionsBank[currentTopic]; userAnswers=new Array(topicQuestions.length).fill(null); currentQuestionIndex=0; score=0; answeredFlag=false; updateScore(); renderQuestionByIndex(); submitBtn.disabled=false; completionBanner.innerText=`⚡ Тема: ${topicMeta[currentTopic].name}`; }
         function renderQuestionByIndex() { const q=topicQuestions[currentQuestionIndex]; if(!q) return; questionDisplay.innerText=q.question; let html=''; q.options.forEach((opt,idx)=>{ html+=`<div class="option-item ${userAnswers[currentQuestionIndex]===idx?'selected':''}" data-opt-index="${idx}">${opt}</div>`; }); optionsContainer.innerHTML=html; const ua=userAnswers[currentQuestionIndex]; if(ua!==null){ const correct=q.correct; document.querySelectorAll('.option-item').forEach(el=>{ if(parseInt(el.dataset.optIndex,10)===correct) el.classList.add('correct-highlight'); }); feedbackText.innerText = (ua===correct) ? `✅ Верно! ${q.explanation}` : `❌ Ошибка. Правильный ответ: «${q.options[correct]}». ${q.explanation}`; answeredFlag=true; submitBtn.disabled=true; } else { feedbackText.innerText='👆 выберите вариант'; answeredFlag=false; submitBtn.disabled=false; } questionCounter.innerText=`${currentQuestionIndex+1}/${topicQuestions.length}`; nextBtn.disabled=(userAnswers[currentQuestionIndex]===null); }
         function recalcScore(){ let c=0; topicQuestions.forEach((q,i)=>{ if(userAnswers[i]!==null && userAnswers[i]===q.correct) c++; }); score=c; updateScore(); }
         function updateScore(){ scoreDisplay.innerText=`✅ ${score}/${topicQuestions.length}`; completionBanner.innerText=(score===topicQuestions.length)?`🎉 Верно все по теме "${topicMeta[currentTopic].name}"!`:`📌 Тема: ${topicMeta[currentTopic].name} · правильных: ${score}`; }
+        
         optionsContainer.addEventListener('click',(e)=>{ const t=e.target.closest('.option-item'); if(!t||answeredFlag) return; const idx=parseInt(t.dataset.optIndex,10); document.querySelectorAll('.option-item').forEach(o=>o.classList.remove('selected')); t.classList.add('selected'); optionsContainer.dataset.pendingChoice=idx; });
         submitBtn.addEventListener('click',()=>{ if(answeredFlag) return; const p=optionsContainer.dataset.pendingChoice; if(p===undefined){ feedbackText.innerText='❗ сначала выберите'; return; } userAnswers[currentQuestionIndex]=parseInt(p,10); recalcScore(); renderQuestionByIndex(); delete optionsContainer.dataset.pendingChoice; });
         nextBtn.addEventListener('click',()=>{ if(currentQuestionIndex<topicQuestions.length-1){ currentQuestionIndex++; answeredFlag=false; renderQuestionByIndex(); delete optionsContainer.dataset.pendingChoice; submitBtn.disabled=false; } else { feedbackText.innerText='🏁 Последний вопрос.'; nextBtn.disabled=true; } });
